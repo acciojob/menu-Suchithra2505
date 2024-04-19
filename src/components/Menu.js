@@ -9,7 +9,7 @@ const Menu = ({ dishes }) => {
   const filteredDishes = category === 'all' ? dishes : dishes.filter(dish => dish.category === category);
 
   return (
-    <div>
+    <div id="main">
       {/* Category buttons */}
       <div>
         {uniqueCategories.map((cat, index) => (
@@ -22,10 +22,10 @@ const Menu = ({ dishes }) => {
         {filteredDishes.map(dish => (
           <div key={dish.id}>
             <h2>{dish.title}</h2>
-            <p>Category: {dish.category}</p>
-            <p>Price: ${dish.price}</p>
+            <p id="filter-btn-1">Category: {dish.category}</p>
+            <p id="filter-btn-2">Price: ${dish.price}</p>
             <img src={dish.img} alt={dish.title} />
-            <p>{dish.desc}</p>
+            <p id="filter-btn-3">{dish.desc}</p>
           </div>
         ))}
       </div>
